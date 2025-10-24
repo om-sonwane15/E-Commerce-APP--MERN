@@ -15,7 +15,7 @@ require("dotenv").config();
 dbConnect();
 const app = express();
 const cors = require('cors/lib/index.js');
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+app.use(cors({ origin: 'https://vercel.com/om7sonwane-gmailcoms-projects/ecommerceappbackend', credentials: true }));
 app.use('/Uploads', express.static(path.join(__dirname, 'src/Uploads')));
 
 
@@ -38,4 +38,5 @@ app.use("/api/address", addressRoutes);
 const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`server started at :${PORT}`);
+
 });
