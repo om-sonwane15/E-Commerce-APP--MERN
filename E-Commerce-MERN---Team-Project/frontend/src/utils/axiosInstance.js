@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Create an axios instance
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://ecommerceappbackend-eta.vercel.app",
   headers: {
     "Content-Type": "application/json",
   },
@@ -24,3 +24,4 @@ axiosInstance.interceptors.request.use(
 );
 
 export default axiosInstance;
+
