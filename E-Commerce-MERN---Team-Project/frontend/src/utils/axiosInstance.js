@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Create an axios instance
 const axiosInstance = axios.create({
-  baseURL: "https://ecommerceapp-zmp2.onrender.com",
+  baseURL: "https://e-commerce-app-6gmk.onrender.com",
   headers: {
     "Content-Type": "application/json",
   },
@@ -24,6 +24,7 @@ axiosInstance.interceptors.request.use(
 );
 
 export default axiosInstance;
+
 
 
 
