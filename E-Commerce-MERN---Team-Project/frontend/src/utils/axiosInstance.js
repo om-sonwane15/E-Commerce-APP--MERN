@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Create an axios instance
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL + "https://e-commerce-app-6gmk.onrender.com",
+  baseURL: import.meta.env.VITE_API_URL + "/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -24,6 +24,7 @@ axiosInstance.interceptors.request.use(
 );
 
 export default axiosInstance;
+
 
 
 
