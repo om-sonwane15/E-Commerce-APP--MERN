@@ -25,7 +25,9 @@ app.use(cors({
   credentials: true
 }));
 app.use('/Uploads', express.static(path.join(__dirname, 'src/Uploads')));
-
+app.get("/api/health", (req, res) => {
+  res.send("✅ Server is awake and running!");
+});
 
 // Middleware
 app.use(express.json());
@@ -48,6 +50,7 @@ app.listen(PORT, () => {
     console.log(`server started at :${PORT}`);
 
 });
+
 
 
 
