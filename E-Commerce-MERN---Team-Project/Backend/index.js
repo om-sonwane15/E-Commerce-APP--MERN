@@ -15,7 +15,15 @@ require("dotenv").config();
 dbConnect();
 const app = express();
 const cors = require('cors/lib/index.js');
-app.use(cors({ origin: 'https://ecommerceappfrontend-beryl.vercel.app/', credentials: true }));
+
+app.use(cors({
+  origin: [
+    "https://ecommerceappfrontend-beryl.vercel.app",
+    "https://e-commerce-app-mern-23m730mw6-om7sonwane-gmailcoms-projects.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use('/Uploads', express.static(path.join(__dirname, 'src/Uploads')));
 
 
@@ -40,5 +48,6 @@ app.listen(PORT, () => {
     console.log(`server started at :${PORT}`);
 
 });
+
 
 
