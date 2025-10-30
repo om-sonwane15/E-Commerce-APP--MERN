@@ -17,14 +17,22 @@ const app = express();
 const cors = require("cors");
 
 
-app.use(cors({
-  origin: [
-    "https://ecommerceappfrontend-beryl.vercel.app",
-    "https://e-commerce-app-mern-23m730mw6-om7sonwane-gmailcoms-projects.vercel.app"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      const allowed = [
+        "https://e-commerce-app-mern.vercel.app",
+        "https://e-commerce-app-6gmk.onrender.com",
+      ];
+      if (!origin || allowed.includes(origin) || origin.endsWith(".vercel.app")) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 app.use('/Uploads', express.static(path.join(__dirname, 'src/Uploads')));
 app.get("/api/health", (req, res) => {
   res.send("✅ Server is awake and running!");
@@ -51,6 +59,7 @@ app.listen(PORT, () => {
     console.log(`server started at :${PORT}`);
 
 });
+
 
 
 
