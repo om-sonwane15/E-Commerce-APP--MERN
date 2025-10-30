@@ -14,7 +14,8 @@ const addressRoutes = require("./src/routes/addressRoutes.js");
 require("dotenv").config();
 dbConnect();
 const app = express();
-const cors = require('cors/lib/index.js');
+const cors = require("cors");
+
 
 app.use(cors({
   origin: [
@@ -50,6 +51,7 @@ app.listen(PORT, () => {
     console.log(`server started at :${PORT}`);
 
 });
+
 
 
 
